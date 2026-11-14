@@ -65,10 +65,82 @@ main {
 header {
     max-width: 280px;
     border: none;
+    padding-bottom: 0;
+    margin-bottom: 10px;
 }
 
 main {
     padding: 6px 20px 0;
+    margin-top: 0;
+}
+
+.quick-links {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 16px 20px 20px;
+    box-sizing: border-box;
+    text-align: center;
+    font-family: "Dongle", Arial, sans-serif;
+    transition: margin-top 0.2s;
+}
+
+body:has(.navbar .dropdown > a:hover) .quick-links,
+body:has(.navbar .dropdown-content:hover) .quick-links,
+body:has(.navbar .dropdown:focus-within) .quick-links,
+body:has(.navbar .dropdown.open) .quick-links {
+    margin-top: 176px;   /* a little more than the tallest dropdown */
+}
+
+.quick-links h2 {
+    margin: 0 0 10px;
+    font-size: 36px;
+    font-weight: 400;
+    color: var(--text);
+}
+
+.quick-links-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 4fr);   /* two columns, so four boxes make a 2x2 grid */
+    gap: 12px;
+}
+
+.quick-link {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 30px;                    /* replaces the image's margin-right */
+    min-height: 64px;
+    padding: 8px 8px 8px 36px;
+    border: 2px solid var(--text-hover);
+    border-radius: 12px;
+    background-color: rgba(0, 0, 0, 0.3);
+    font-size: 36px;
+    line-height: 1;              /* removes Dongle's extra space above and below */
+    text-align: left;          /* keeps wrapped lines centered */
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.quick-link img {
+    height: 28px;
+    width: 32px;
+    object-fit: contain;
+    flex-shrink: 0;              /* icon never gets squeezed by long text */
+}
+
+.quick-link-label {
+    position: relative;
+    top: 2px;                    /* nudge to fix Dongle's uneven vertical spacing */
+}
+
+.quick-link .emoji {
+    font-size: 0.6em;
+    vertical-align: middle;
+    position: relative; top: 4px;
+}
+
+.quick-link:hover {
+    background-color: var(--text-hover);
+    color: black;
 }
 
 h1 {
@@ -92,7 +164,7 @@ h1 {
    ========================================================================== */
 #buttons {
     list-style-type: none;
-    margin: 0;
+    margin: -12px 0 0;
     padding: 0;
     text-align: center;
 }
