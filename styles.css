@@ -54,15 +54,17 @@ a:active {
    ========================================================================== */
 header,
 main {
-    background-color: black;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 36 36'%3E%3Cg fill='%23ffffff' fill-opacity='0.09'%3E%3Cpath transform='translate(4 4) scale(0.5)' d='M12 21C5 15 2 11 2 7.5 2 5 4 3 6.5 3 9 3 11 4.5 12 6.5 13 4.5 15 3 17.5 3 20 3 22 5 22 7.5 22 11 19 15 12 21Z'/%3E%3Cpath transform='translate(22 22) scale(0.5)' d='M12 21C5 15 2 11 2 7.5 2 5 4 3 6.5 3 9 3 11 4.5 12 6.5 13 4.5 15 3 17.5 3 20 3 22 5 22 7.5 22 11 19 15 12 21Z'/%3E%3C/g%3E%3C/svg%3E");
-    background-size: 36px 36px;
     max-width: 600px;
     margin: 20px auto;
     padding: 20px;
     border-radius: 20px;
     box-sizing: border-box;
     border: 2px solid var(--text-hover);
+}
+
+header {
+    max-width: 280px;
+    border: none;
 }
 
 main {
