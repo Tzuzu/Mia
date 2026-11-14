@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mia ♡</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dongle&family=Momo+Signature&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Icons and manifest -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+</head>
+
+<body>
+
+    <!-- Header: name, photo, icon links -->
+    <header>
+        <h1 class="momo-signature-regular">Mia</h1>
+
+        <svg class="heart-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mia">
+            <defs>
+                <clipPath id="heartClip">
+                    <path d="M50 88 C20 65 4 48 4 30 C4 16 15 8 27 8 C37 8 45 13 50 21 C55 13 63 8 73 8 C85 8 96 16 96 30 C96 48 80 65 50 88 Z"/>
+                </clipPath>
+            </defs>
+
+            <!-- Photo, clipped to the heart -->
+            <image href="mia.jpg" x="0" y="6" width="100" height="100"
+                   preserveAspectRatio="xMidYMid slice"
+                   clip-path="url(#heartClip)"/>
+
+            <!-- Heart border -->
+            <path d="M50 88 C20 65 4 48 4 30 C4 16 15 8 27 8 C37 8 45 13 50 21 C55 13 63 8 73 8 C85 8 96 16 96 30 C96 48 80 65 50 88 Z"
+                  fill="none" stroke="#FCA7A7" stroke-width="2.5" stroke-linejoin="round"/>
+        </svg>
+
+        <ul id="buttons">
+            <li>
+                <a href="https://x.com/miababyy_xo"><img src="X.svg" alt="X"></a>
+            </li>
+            <li>
+                <a href="https://cash.app/$miababyyyyxo"><img src="CashApp.svg" alt="Cash App"></a>
+            </li>
+        </ul>
+    </header>
+
+    <!-- Main: navigation menu -->
+    <main>
+        <nav class="navbar">
+            <ul>
+                <li class="dropdown">
+                    <a href="#">Socials</a>
+                    <ul class="dropdown-content">
+                        <li><a href="https://x.com/miababyy_xo">X</a></li>
+                        <li><a href="https://t.me/miasdollhouse">Telegram</a></li>
+                        <li><a class="age-link" href="https://www.loyalfans.com/miababyy_xo">LoyalFans</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#">Payment Methods</a>
+                    <ul class="dropdown-content">
+                        <li><a class="apple">Apple Pay:<br>miaxbabyyy@gmail.com</a></li>
+                        <li><a href="https://cash.app/$miababyyyyxo">Cashapp</a></li>
+                        <li><a href="https://throne.com/miababyy_xo">Throne</a></li>
+                        <li><a href="https://youpay.me/miababyyxo">Youpay</a></li>
+                    </ul>
+                </li>
+
+                <li><a class="age-link" href="https://onlyfans.com/miababyy_xo">Age Verification</a></li>
+            </ul>
+        </nav>
+    </main>
+
+    <!-- 18+ warning (opened by links with the "age-link" class) -->
+    <dialog id="age-dialog">
+        <h2>Age Warning</h2>
+        <p>This website contains adult content intended for people 18 years or older.</p>
+        <p>By continuing, you confirm that you are at least 18 years old.</p>
+        <div class="age-buttons">
+            <button id="age-confirm" type="button">I am 18 or older</button>
+            <button id="age-cancel" type="button">Exit</button>
+        </div>
+    </dialog>
+
+    <script src="script.js"></script>
+</body>
+</html>

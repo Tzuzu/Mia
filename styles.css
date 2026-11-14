@@ -1,0 +1,248 @@
+/* ==========================================================================
+   Variables
+   ========================================================================== */
+:root {
+    --bg-page:     #54070F;   /* page background */
+    --bg-panel:    #8C2A3B;   /* header, main, dropdown menus */
+    --bg-dialog:   #b8354d;   /* age warning box */
+    --accent:      #D61C3E;   /* dialog border, confirm button */
+    --text:        white;
+    --text-hover:  #FCA7A7;   /* link hover, navbar hearts */
+}
+
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+body {
+    background-color: var(--bg-page);
+}
+
+a,
+a:visited {
+    color: var(--text);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--text-hover);
+}
+
+a:active {
+    color: var(--text);
+}
+
+.dongle-regular {
+    font-family: "Dongle", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.momo-signature-regular {
+    font-family: "Momo Signature", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+/* ==========================================================================
+   Layout panels
+   ========================================================================== */
+header,
+main {
+    background-color: var(--bg-panel);
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+
+h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    color: var(--text);
+}
+
+.heart-svg {
+    display: block;
+    width: min(160px, 40vw);
+    height: auto;
+    margin: 0 auto;
+}
+
+
+/* ==========================================================================
+   Icon buttons
+   ========================================================================== */
+#buttons {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+#buttons img {
+    height: 32px;
+    width: auto;   
+}
+
+#buttons li {
+    display: inline-block;
+}
+
+#buttons li a {
+    display: inline;
+    padding: 8px;
+}
+
+
+/* ==========================================================================
+   Navbar: top-level row
+   ========================================================================== */
+.navbar {
+    width: 100%;
+}
+
+.navbar > ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: "Dongle", Arial, sans-serif;
+}
+
+.navbar > ul > li {
+    display: flex;
+    align-items: center;
+}
+
+/* Hearts between items */
+.navbar > ul > li:not(:last-child)::after {
+    content: "❤";
+    color: var(--text-hover);
+    font-size: 10px;
+}
+
+.navbar a {
+    display: block;
+}
+
+/* Top-level links */
+.navbar > ul > li > a {
+    margin: 0 clamp(4px, 2vw, 14px);
+    padding: 10px 0;
+    font-size: clamp(16px, 4.5vw, 24px);
+    white-space: nowrap;
+}
+
+
+/* ==========================================================================
+   Navbar: dropdown menus
+   ========================================================================== */
+.navbar .dropdown {
+    position: relative;
+}
+
+.navbar .dropdown-content {
+    display: none;                    /* hidden until hovered or opened */
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    min-width: 120px;
+    width: max-content;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color: var(--bg-panel);
+    border-radius: 0 0 12px 12px;
+    line-height: 0.9;
+}
+
+.navbar .dropdown-content a {
+    padding: 8px 10px;
+    font-size: 24px;
+    text-align: center;
+}
+
+/* Two-line Apple Pay item */
+.navbar .dropdown-content .apple {
+    line-height: 0.8;
+}
+
+/* Show the menu: hovering the link, hovering the menu,
+   keyboard focus, or the .open class added by script.js (mobile taps) */
+.navbar .dropdown > a:hover + .dropdown-content,
+.navbar .dropdown-content:hover,
+.navbar .dropdown:focus-within .dropdown-content,
+.navbar .dropdown.open .dropdown-content {
+    display: flex;
+}
+
+
+/* ==========================================================================
+   Age warning dialog
+   ========================================================================== */
+#age-dialog {
+    width: min(90%, 420px);
+    padding: 24px;
+    background-color: var(--bg-dialog);
+    color: var(--text);
+    border: 3px solid var(--accent);
+    border-radius: 20px;
+    text-align: center;
+    font-family: "Dongle", Arial, sans-serif;
+    font-size: 26px;
+    line-height: 1;
+}
+
+#age-dialog::backdrop {
+    background: rgba(0, 0, 0, 0.75);
+}
+
+#age-dialog h2 {
+    margin: 0 0 10px;
+    font-size: 40px;
+}
+
+#age-dialog p {
+    margin: 0 0 12px;
+}
+
+.age-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.age-buttons button {
+    padding: 8px 18px;
+    background: transparent;
+    color: var(--text);
+    border: 2px solid var(--text);
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 26px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.age-buttons button:hover {
+    background: var(--text);
+    color: var(--bg-dialog);
+}
+
+#age-confirm {
+    background: var(--accent);
+}
