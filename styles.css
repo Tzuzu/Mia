@@ -60,6 +60,10 @@ main {
     border: 2px solid var(--text-hover);
 }
 
+main {
+    padding: 6px 20px;
+}
+
 h1 {
     display: flex;
     align-items: center;
@@ -139,8 +143,8 @@ h1 {
 /* Top-level links */
 .navbar > ul > li > a {
     margin: 0 var(--nav-gap);
-    padding: 10px 0;
-    font-size: clamp(16px, 4.5vw, 24px);
+    padding: 2px 0;
+    font-size: clamp(20px, 5.5vw, 32px);
     white-space: nowrap;
 }
 
@@ -178,7 +182,7 @@ h1 {
 
 .navbar .dropdown-content a {
     padding: 8px 10px;
-    font-size: 24px;
+    font-size: 28px;
     text-align: center;
 }
 
