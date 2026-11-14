@@ -33,21 +33,20 @@ function initCopyLinks() {
   const copyLinks = document.querySelectorAll('[data-copy]');
 
   copyLinks.forEach(link => {
-    const label = link.querySelector('.copy-text');
-    const originalText = label.textContent;
+    const originalText = link.textContent;
 
     link.addEventListener('click', async event => {
-      event.preventDefault();                       // stop the "#" jump
+      event.preventDefault();
 
       try {
         await navigator.clipboard.writeText(link.dataset.copy);
-        label.textContent = 'Copied!';
+        link.textContent = 'Copied!';
       } catch (error) {
-        label.textContent = 'Copy failed';
+        link.textContent = 'Copy failed';
       }
 
       setTimeout(() => {
-        label.textContent = originalText;
+        link.textContent = originalText;
       }, 1500);
     });
   });
