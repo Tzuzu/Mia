@@ -26,6 +26,33 @@ function initDropdowns() {
   });
 }
 
+/* ==========================================================================
+   Click-to-copy (Apple Pay email)
+   ========================================================================== */
+function initCopyLinks() {
+  const copyLinks = document.querySelectorAll('[data-copy]');
+
+  copyLinks.forEach(link => {
+    const label = link.querySelector('.copy-text');
+    const originalText = label.textContent;
+
+    link.addEventListener('click', async event => {
+      event.preventDefault();                       // stop the "#" jump
+
+      try {
+        await navigator.clipboard.writeText(link.dataset.copy);
+        label.textContent = 'Copied!';
+      } catch (error) {
+        label.textContent = 'Copy failed';
+      }
+
+      setTimeout(() => {
+        label.textContent = originalText;
+      }, 1500);
+    });
+  });
+}
+
 
 /* ==========================================================================
    Age warning dialog
@@ -67,3 +94,6 @@ function initAgeGate() {
    ========================================================================== */
 initDropdowns();
 initAgeGate();
+initDropdowns();
+initAgeGate();
+initCopyLinks();

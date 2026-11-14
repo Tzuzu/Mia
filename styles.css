@@ -8,6 +8,7 @@
     --accent:      #D61C3E;   /* dialog border, confirm button */
     --text:        white;
     --text-hover:  #FCA7A7;   /* link hover, navbar hearts */
+    --nav-gap:     clamp(4px, 2vw, 14px);   /* side space around top-level links */
 }
 
 
@@ -56,6 +57,7 @@ main {
     padding: 20px;
     border-radius: 20px;
     box-sizing: border-box;
+    border: 2px solid var(--text-hover);
 }
 
 h1 {
@@ -86,7 +88,7 @@ h1 {
 
 #buttons img {
     height: 32px;
-    width: auto;   
+    width: auto;
 }
 
 #buttons li {
@@ -136,7 +138,7 @@ h1 {
 
 /* Top-level links */
 .navbar > ul > li > a {
-    margin: 0 clamp(4px, 2vw, 14px);
+    margin: 0 var(--nav-gap);
     padding: 10px 0;
     font-size: clamp(16px, 4.5vw, 24px);
     white-space: nowrap;
@@ -151,21 +153,27 @@ h1 {
 }
 
 .navbar .dropdown-content {
-    display: none;                    /* hidden until hovered or opened */
+    display: none;
     flex-direction: column;
     position: absolute;
     top: 100%;
     left: 50%;
     transform: translateX(-50%);
     z-index: 100;
-    min-width: 120px;
+    box-sizing: border-box;
+    min-width: calc(100% - 2 * var(--nav-gap));
     width: max-content;
     margin: 0;
     padding: 0;
     list-style: none;
     background-color: var(--bg-panel);
-    border-radius: 0 0 12px 12px;
+    border: 2px solid var(--text-hover);
+    border-radius: 12px;
     line-height: 0.9;
+}
+
+.navbar .dropdown-content li {
+    width: 100%;
 }
 
 .navbar .dropdown-content a {
