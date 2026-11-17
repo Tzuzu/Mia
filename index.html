@@ -7,10 +7,6 @@
     <meta name="robots" content="noindex">
     <title>MIA</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dongle&family=Momo+Signature&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="styles.css">
 
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -38,38 +34,19 @@
         </svg>
     </header>
 
-    <main>
-        <nav class="navbar">
-            <ul>
-                <li class="dropdown">
-                    <a href="#">Socials</a>
-                    <ul class="dropdown-content">
-                        <li><a href="https://x.com/miababyy_xo">X</a></li>
-                        <li><a href="https://t.me/miasdollhouse">Telegram</a></li>
-                        <li><a class="age-link" href="https://www.loyalfans.com/miababyy_xo">LoyalFans</a></li>
-                    </ul>
-                </li>
-
-                <li class="dropdown">
-                    <a href="#">Payment Methods</a>
-                    <ul class="dropdown-content">
-                        <li><a class="apple" href="#" data-copy-encoded="bWlheGJhYnl5eUBnbWFpbC5jb20=">Apple Pay</a></li>
-                        <li><a href="https://cash.app/$miababyyyyxo">Cashapp</a></li>
-                        <li><a href="https://throne.com/miababyy_xo">Throne</a></li>
-                        <li><a href="https://youpay.me/miababyyxo">Youpay</a></li>
-                    </ul>
-                </li>
-
-                <li><a class="age-link" href="https://onlyfans.com/miababyy_xo">Age Verification</a></li>
-            </ul>
-        </nav>
-    </main>
-
     <section class="quick-links" aria-label="Quick links">
         <div class="quick-links-grid">
             <a class="quick-link" href="https://t.me/miasdollhouse">
                 <img src="Telegram.svg" alt="">
-                <span class="quick-link-label">Mia's Dollhouse <span class="emoji" aria-hidden="true">&#127872; &#129528; &#10024;</span></span>
+                <span class="quick-link-label">Mia's Dollhouse (Telegram) <span class="emoji" aria-hidden="true">&#127872; &#129528; &#10024;</span></span>
+            </a>
+            <a class="quick-link" href="#" data-copy-encoded="bWlheGJhYnl5eUBnbWFpbC5jb20=">
+                <img src="ApplePay.svg" alt="">
+                <span class="quick-link-label">Apple Pay (tap to copy)</span>
+            </a>
+            <a class="quick-link age-link" href="https://www.loyalfans.com/miababyy_xo">
+                <img src="LoyalFans.svg" alt="">
+                <span class="quick-link-label">LoyalFans (18+)</span>
             </a>
             <a class="quick-link" href="https://cash.app/$miababyyyyxo">
                 <img src="CashApp.svg" alt="">
@@ -79,9 +56,17 @@
                 <img src="Throne.svg" alt="">
                 <span class="quick-link-label">Throne</span>
             </a>
+            <a class="quick-link" href="https://youpay.me/miababyyxo">
+                <img src="YouPay.svg" alt="">
+                <span class="quick-link-label">YouPay</span>
+            </a>
             <a class="quick-link" href="https://x.com/miababyy_xo">
                 <img src="X.svg" alt="">
                 <span class="quick-link-label">X</span>
+            </a>
+            <a class="quick-link age-link" href="https://onlyfans.com/miababyy_xo">
+                <img src="OnlyFans.svg" alt="">
+                <span class="quick-link-label">Age Verification Only (18+)</span>
             </a>
         </div>
     </section>
@@ -90,6 +75,7 @@
         <h2>Age Warning</h2>
         <p>This website contains adult content intended for people 18 years or older.</p>
         <p>By continuing, you confirm that you are at least 18 years old.</p>
+        <p>You will be taken to: <span id="age-destination"></span></p>
         <div class="age-buttons">
             <button id="age-confirm" type="button">I am 18 or older</button>
             <button id="age-cancel" type="button">Exit</button>

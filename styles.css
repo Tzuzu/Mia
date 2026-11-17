@@ -3,7 +3,22 @@
     --accent:     #D61C3E;
     --text:       white;
     --text-hover: #FCA7A7;
-    --nav-gap:    clamp(4px, 2vw, 14px);
+}
+
+@font-face {
+    font-family: "Dongle";
+    src: url("fonts/Dongle-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Momo Signature";
+    src: url("fonts/MomoSignature-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
 }
 
 body {
@@ -33,17 +48,11 @@ a:active {
 }
 
 
-header,
-main {
-    max-width: 600px;
-    margin: 0 auto;
-    box-sizing: border-box;
-}
-
 header {
     max-width: 280px;
     margin: 20px auto 10px;
     padding: 20px 20px 0;
+    box-sizing: border-box;
 }
 
 h1 {
@@ -61,90 +70,6 @@ h1 {
     margin: 0 auto;
 }
 
-main {
-    padding: 6px 20px 0;
-    border: 2px solid var(--text-hover);
-    border-radius: 20px;
-}
-
-
-.navbar > ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    font-family: "Dongle", Arial, sans-serif;
-}
-
-.navbar > ul > li {
-    display: flex;
-    align-items: center;
-}
-
-.navbar > ul > li:not(:last-child)::after {
-    content: "❤";
-    color: var(--text-hover);
-    font-size: 10px;
-    transform: translateY(-2px);
-}
-
-.navbar a {
-    display: block;
-}
-
-.navbar > ul > li > a {
-    margin: 0 var(--nav-gap);
-    padding: 2px 0 8px;
-    font-size: clamp(20px, 5.5vw, 32px);
-    white-space: nowrap;
-}
-
-
-.navbar .dropdown {
-    position: relative;
-}
-
-.navbar .dropdown-content {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 100;
-    box-sizing: border-box;
-    min-width: calc(100% - 2 * var(--nav-gap));
-    width: max-content;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    background-color: rgba(0, 0, 0, 0.3);
-    border: 2px solid var(--text-hover);
-    border-radius: 0 0 12px 12px;
-    line-height: 0.9;
-}
-
-.navbar .dropdown-content li {
-    width: 100%;
-}
-
-.navbar .dropdown-content a {
-    padding: 8px 10px;
-    font-size: 28px;
-    text-align: center;
-}
-
-.navbar .dropdown > a:hover + .dropdown-content,
-.navbar .dropdown-content:hover,
-.navbar .dropdown:focus-within .dropdown-content,
-.navbar .dropdown.open .dropdown-content {
-    display: flex;
-}
-
 
 .quick-links {
     max-width: 600px;
@@ -152,14 +77,6 @@ main {
     padding: 16px 20px 20px;
     box-sizing: border-box;
     font-family: "Dongle", Arial, sans-serif;
-    transition: margin-top 0.2s;
-}
-
-body:has(.navbar .dropdown > a:hover) .quick-links,
-body:has(.navbar .dropdown-content:hover) .quick-links,
-body:has(.navbar .dropdown:focus-within) .quick-links,
-body:has(.navbar .dropdown.open) .quick-links {
-    margin-top: 176px;
 }
 
 .quick-links-grid {
@@ -235,6 +152,10 @@ body:has(.navbar .dropdown.open) .quick-links {
 
 #age-dialog p {
     margin: 0 0 12px;
+}
+
+#age-destination {
+    color: var(--text-hover);
 }
 
 .age-buttons {
