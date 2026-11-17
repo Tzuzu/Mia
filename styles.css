@@ -1,23 +1,13 @@
-/* ==========================================================================
-   Variables
-   ========================================================================== */
 :root {
-    --bg-page:     #54070F;   /* page background */
-    --bg-panel:    #8C2A3B;   /* header, main, dropdown menus */
-    --bg-dialog:   #b8354d;   /* age warning box */
-    --accent:      #D61C3E;   /* dialog border, confirm button */
-    --text:        white;
-    --text-hover:  #FCA7A7;   /* link hover, navbar hearts */
-    --nav-gap:     clamp(4px, 2vw, 14px);   /* side space around top-level links */
+    --bg-page:    #54070F;
+    --accent:     #D61C3E;
+    --text:       white;
+    --text-hover: #FCA7A7;
+    --nav-gap:    clamp(4px, 2vw, 14px);
 }
 
-
-/* ==========================================================================
-   Base
-   ========================================================================== */
 body {
     background-color: black;
-    /*background-color: var(--bg-page);*/
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewBox='0 0 44 44'%3E%3Cg fill='%23FCA7A7' fill-opacity='0.14'%3E%3Cpath transform='translate(5 5) scale(0.6)' d='M12 21C5 15 2 11 2 7.5 2 5 4 3 6.5 3 9 3 11 4.5 12 6.5 13 4.5 15 3 17.5 3 20 3 22 5 22 7.5 22 11 19 15 12 21Z'/%3E%3Cpath transform='translate(27 27) scale(0.6)' d='M12 21C5 15 2 11 2 7.5 2 5 4 3 6.5 3 9 3 11 4.5 12 6.5 13 4.5 15 3 17.5 3 20 3 22 5 22 7.5 22 11 19 15 12 21Z'/%3E%3C/g%3E%3C/svg%3E");
     background-size: 44px 44px;
 }
@@ -36,12 +26,6 @@ a:active {
     color: var(--text);
 }
 
-.dongle-regular {
-    font-family: "Dongle", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
 .momo-signature-regular {
     font-family: "Momo Signature", cursive;
     font-weight: 400;
@@ -49,98 +33,17 @@ a:active {
 }
 
 
-/* ==========================================================================
-   Layout panels
-   ========================================================================== */
 header,
 main {
     max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    border-radius: 20px;
+    margin: 0 auto;
     box-sizing: border-box;
-    border: 2px solid var(--text-hover);
 }
 
 header {
     max-width: 280px;
-    border: none;
-    padding-bottom: 0;
-    margin-bottom: 10px;
-}
-
-main {
-    padding: 6px 20px 0;
-    margin-top: 0;
-}
-
-.quick-links {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 16px 20px 20px;
-    box-sizing: border-box;
-    text-align: center;
-    font-family: "Dongle", Arial, sans-serif;
-    transition: margin-top 0.2s;
-}
-
-body:has(.navbar .dropdown > a:hover) .quick-links,
-body:has(.navbar .dropdown-content:hover) .quick-links,
-body:has(.navbar .dropdown:focus-within) .quick-links,
-body:has(.navbar .dropdown.open) .quick-links {
-    margin-top: 176px;   /* a little more than the tallest dropdown */
-}
-
-.quick-links h2 {
-    margin: 0 0 10px;
-    font-size: 36px;
-    font-weight: 400;
-    color: var(--text);
-}
-
-.quick-links-grid {
-    display: grid;
-    grid-template-columns: repeat(1, 4fr);   /* two columns, so four boxes make a 2x2 grid */
-    gap: 12px;
-}
-
-.quick-link {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 30px;                    /* replaces the image's margin-right */
-    min-height: 64px;
-    padding: 8px 8px 8px 36px;
-    border: 2px solid var(--text-hover);
-    border-radius: 12px;
-    background-color: rgba(0, 0, 0, 0.3);
-    font-size: 36px;
-    line-height: 1;              /* removes Dongle's extra space above and below */
-    text-align: left;          /* keeps wrapped lines centered */
-    transition: background-color 0.2s, color 0.2s;
-}
-
-.quick-link img {
-    height: 28px;
-    width: 32px;
-    object-fit: contain;
-    flex-shrink: 0;              /* icon never gets squeezed by long text */
-}
-
-.quick-link-label {
-    position: relative;
-    top: 2px;                    /* nudge to fix Dongle's uneven vertical spacing */
-}
-
-.quick-link .emoji {
-    font-size: 0.6em;
-    vertical-align: middle;
-    position: relative; top: 4px;
-}
-
-.quick-link:hover {
-    background-color: var(--text-hover);
-    color: black;
+    margin: 20px auto 10px;
+    padding: 20px 20px 0;
 }
 
 h1 {
@@ -158,38 +61,12 @@ h1 {
     margin: 0 auto;
 }
 
-
-/* ==========================================================================
-   Icon buttons
-   ========================================================================== */
-#buttons {
-    list-style-type: none;
-    margin: -12px 0 0;
-    padding: 0;
-    text-align: center;
+main {
+    padding: 6px 20px 0;
+    border: 2px solid var(--text-hover);
+    border-radius: 20px;
 }
 
-#buttons img {
-    height: 32px;
-    width: auto;
-}
-
-#buttons li {
-    display: inline-block;
-}
-
-#buttons li a {
-    display: inline;
-    padding: 8px;
-}
-
-
-/* ==========================================================================
-   Navbar: top-level row
-   ========================================================================== */
-.navbar {
-    width: 100%;
-}
 
 .navbar > ul {
     display: flex;
@@ -208,7 +85,6 @@ h1 {
     align-items: center;
 }
 
-/* Hearts between items */
 .navbar > ul > li:not(:last-child)::after {
     content: "❤";
     color: var(--text-hover);
@@ -220,7 +96,6 @@ h1 {
     display: block;
 }
 
-/* Top-level links */
 .navbar > ul > li > a {
     margin: 0 var(--nav-gap);
     padding: 2px 0 8px;
@@ -229,9 +104,6 @@ h1 {
 }
 
 
-/* ==========================================================================
-   Navbar: dropdown menus
-   ========================================================================== */
 .navbar .dropdown {
     position: relative;
 }
@@ -251,7 +123,6 @@ h1 {
     padding: 0;
     list-style: none;
     background-color: rgba(0, 0, 0, 0.3);
-    /*background-color: var(--bg-panel);*/
     border: 2px solid var(--text-hover);
     border-radius: 0 0 12px 12px;
     line-height: 0.9;
@@ -267,13 +138,6 @@ h1 {
     text-align: center;
 }
 
-/* Two-line Apple Pay item */
-.navbar .dropdown-content .apple {
-    line-height: 0.8;
-}
-
-/* Show the menu: hovering the link, hovering the menu,
-   keyboard focus, or the .open class added by script.js (mobile taps) */
 .navbar .dropdown > a:hover + .dropdown-content,
 .navbar .dropdown-content:hover,
 .navbar .dropdown:focus-within .dropdown-content,
@@ -282,13 +146,72 @@ h1 {
 }
 
 
-/* ==========================================================================
-   Age warning dialog
-   ========================================================================== */
+.quick-links {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 16px 20px 20px;
+    box-sizing: border-box;
+    font-family: "Dongle", Arial, sans-serif;
+    transition: margin-top 0.2s;
+}
+
+body:has(.navbar .dropdown > a:hover) .quick-links,
+body:has(.navbar .dropdown-content:hover) .quick-links,
+body:has(.navbar .dropdown:focus-within) .quick-links,
+body:has(.navbar .dropdown.open) .quick-links {
+    margin-top: 176px;
+}
+
+.quick-links-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+.quick-link {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 30px;
+    min-height: 64px;
+    padding: 8px 8px 8px 36px;
+    border: 2px solid var(--text-hover);
+    border-radius: 12px;
+    background-color: rgba(0, 0, 0, 0.3);
+    font-size: 36px;
+    line-height: 1;
+    text-align: left;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.quick-link:hover {
+    background-color: var(--text-hover);
+    color: black;
+}
+
+.quick-link img {
+    height: 28px;
+    width: 32px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.quick-link-label {
+    position: relative;
+    top: 2px;
+}
+
+.quick-link .emoji {
+    position: relative;
+    top: 4px;
+    font-size: 0.6em;
+    vertical-align: middle;
+}
+
+
 #age-dialog {
     width: min(90%, 420px);
     padding: 24px;
-    /*background-color: var(--bg-panel);*/
     background-color: black;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 36 36'%3E%3Cg fill='%23ffffff' fill-opacity='0.09'%3E%3Cpath transform='translate(4 4) scale(0.5)' d='M12 21C5 15 2 11 2 7.5 2 5 4 3 6.5 3 9 3 11 4.5 12 6.5 13 4.5 15 3 17.5 3 20 3 22 5 22 7.5 22 11 19 15 12 21Z'/%3E%3Cpath transform='translate(22 22) scale(0.5)' d='M12 21C5 15 2 11 2 7.5 2 5 4 3 6.5 3 9 3 11 4.5 12 6.5 13 4.5 15 3 17.5 3 20 3 22 5 22 7.5 22 11 19 15 12 21Z'/%3E%3C/g%3E%3C/svg%3E");
     background-size: 36px 36px;
@@ -302,7 +225,6 @@ h1 {
 }
 
 #age-dialog::backdrop {
-    /*background: rgba(84, 7, 15, 0.85);   /* #54070F at 85% */
     background: rgba(0, 0, 0, 0.85);
 }
 
@@ -337,7 +259,6 @@ h1 {
 
 .age-buttons button:hover {
     background: var(--text);
-    /*color: var(--bg-panel);*/
     color: black;
 }
 
@@ -346,7 +267,7 @@ h1 {
 }
 
 #age-cancel {
-    background: var(--text-hover);   
+    background: var(--text-hover);
     color: black;
 }
 
