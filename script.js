@@ -23,14 +23,14 @@ function initDropdowns() {
 }
 
 function initCopyLinks() {
-  document.querySelectorAll('[data-copy]').forEach(link => {
+  document.querySelectorAll('[data-copy-encoded]').forEach(link => {
     const originalText = link.textContent;
 
     link.addEventListener('click', async event => {
       event.preventDefault();
 
       try {
-        await navigator.clipboard.writeText(link.dataset.copy);
+        await navigator.clipboard.writeText(atob(link.dataset.copyEncoded));
         link.textContent = 'Copied!';
       } catch (error) {
         link.textContent = 'Copy failed';
